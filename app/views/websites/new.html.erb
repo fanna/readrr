@@ -1,4 +1,4 @@
-<div id="fullscreen_bg" class="fullscreen_bg"/>
+	<div id="fullscreen_bg" class="fullscreen_bg"/>
 <ul class="nav navbar-nav navbar-right">
 <% if user_signed_in? %>
 <li><%= link_to "Read in color", new_website_path %></li>
@@ -8,9 +8,19 @@
 <li><%= link_to "Login", new_user_session_path %></li>
 <% end %>
 </ul>
-<div class="container">
 
+	<%= form_for @website do |f| -%>
+		URL:<%= f.text_field :url %>
+		<%= f.submit %>
+	<% end -%>
 
+	Read sites: <br />
+	<% if !@websites.blank? %>
+		<% for item in @websites %>
+			<%= item.url %><br />
+		<% end %>
 
+	<% else %>
 
-</div>
+	<% end %>
+	
