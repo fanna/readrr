@@ -1,7 +1,6 @@
 class WebsitesController < ApplicationController
-	  ##require 'open-uri'
-	  ##require 'net/http'
-	  ##require 'uri'
+	  require 'open-uri'
+	  require 'nokogiri'
 
 
 
@@ -11,10 +10,6 @@ class WebsitesController < ApplicationController
   	@website = Website.new
   	@websites = Website.all
   	
-  	##website = @website.to_s
-  	##encoded_url = URI.encode(website)
-  	##uri = URI.parse(encoded_url)
-  	##Nokogiri::HTML::Document.parse(HTTParty.get(encoded_url).body).title
   end
 
   def create
@@ -27,5 +22,17 @@ class WebsitesController < ApplicationController
   def website_params
     params.require(:website).permit(:url)
   end
+
+  def grab
+  	input_url = params[:url]
+  	url = input_url.to_s
+  	data = Nokogiri::HTML(open(url))
+  	contents = data.css("html")
+  	contents.each do |content|
+		content.at_css("h1").text.strip
+		content.at_css("p").text.strip
+  	end
+  end
+
 
 end

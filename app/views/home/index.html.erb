@@ -1,15 +1,14 @@
 <div id="fullscreen_bg" class="fullscreen_bg"/>
-<ul class="nav navbar-nav navbar-right">
-<% if user_signed_in? %>
-<li><%= link_to "Read in color", new_website_path %></li>
-<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-<% else %>
-<li><%= link_to "Register", new_user_registration_path %></li>
-<li><%= link_to "Login", new_user_session_path %></li>
-<% end %>
-</ul>
-<div class="container">
 
+<div class="container">
+	<form class="form-signin">
+	<h1 id="main_font" class="form-signin-heading text-muted">readrr</h1>
+
+	<%= link_to "Read in color", new_website_path, class: 'btn btn-danger btn-lg'%>
+	<%= link_to "Logout", destroy_user_session_path, method: :delete , class: 'btn btn-danger btn-lg'%>
+
+		
+	</form>
 
 
 

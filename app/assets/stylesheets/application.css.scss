@@ -17,22 +17,28 @@
 @import "bootstrap";
 
 
-@font-face {
-  font-family: 'OldLondon';
-  src:url('OldLondon.eot');
-  src:url('OldLondon.eot?#iefix') format('embedded-opentype'),
-    url('OldLondon.svg#icomoon') format('svg'),
-    url('OldLondon.woff') format('woff'),
-    url('OldLondon.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+  @font-face {
+    font-family: 'OldLondon';
+    src:url('OldLondon.eot');
+    src:url('OldLondon.eot?#iefix') format('embedded-opentype'),
+      url('OldLondon.svg#icomoon') format('svg'),
+      url('OldLondon.woff') format('woff'),
+      url('OldLondon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-h1
-{
-	font-family: 'OldLondon','Helvetica Neue',Arial,sans-serif;
-	font-size: 74px;
-}
+  #main_font{
+    font-size:150px;
+    padding-top:10%;
+
+  }
+
+  h1
+  {
+  	font-family: 'OldLondon','Helvetica Neue',Arial,sans-serif;
+  	font-size: 74px;
+  }
 
 
   body {
@@ -138,5 +144,19 @@ h1
   }
   li {
   	background-color: white;
-  	border-radius: 5px;
+  	border-radius: 100%;
+  }
+
+  #info{
+    color:white;
+  }
+
+  #search{
+    width:450px;
+  }
+
+  .urls{
+    background-color:white;
+    width:30%;
+    border-radius:8px;
   }
