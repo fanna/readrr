@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 	end
   end
 
+  #has_many :websites
+
   validates :username,
 	:presence => true,
 	:uniqueness => {
