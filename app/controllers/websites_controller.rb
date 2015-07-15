@@ -17,6 +17,7 @@ class WebsitesController < ApplicationController
     @h1_title = ""
     @paragraph = ""
     @final_content = " "
+
   	input_url = website_params
   	url = input_url.to_s
   	url.slice! '{"url"=>"'
@@ -29,8 +30,11 @@ class WebsitesController < ApplicationController
 	  end
 
     @final_content = @h1_title + @paragraph
-    puts @final_content.split(" ")
     
+    @array = Array.new
+    @array = @final_content.split(" ")
+    #TODO: pass @array to websites.js
+
   end
 
   def website_params
