@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$("#read").click(function () {
-		var myString = 'ovde ce ici string';
+		var myString = JSON.parse($('#array').text());
 		$.post("http://localhost:4567/", { myString: myString });
 
 		if ($('[name="speed1"]').is(':checked')){ var mySpeed = "200"; };

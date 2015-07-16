@@ -1,0 +1,8 @@
+
+<h1>Read sites:</h1>
+<div class="container">
+<% @websites.each do |website| %>
+<h5><%= link_to website.url, website_path(website.id) %></h5>
+<% end %>
+<br/>
+</div>
