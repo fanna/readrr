@@ -14,12 +14,12 @@ def sign_in
 end
 
 def register
-click_link "Sign up"
-fill_in "user_username", :with => @visitor[:username]
-fill_in "user_email", :with => @visitor[:email]
-fill_in "user_password", :with => @visitor[:password]
-fill_in "user_password_confirmation", :with => @visitor[:password]
-click_button "Sign up"
+	click_link "Sign up"
+	fill_in "user_username", :with => @visitor[:username]
+	fill_in "user_email", :with => @visitor[:email]
+	fill_in "user_password", :with => @visitor[:password]
+	fill_in "user_password_confirmation", :with => @visitor[:password]
+	click_button "Sign up"
 end
 
 
