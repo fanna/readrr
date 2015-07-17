@@ -3,3 +3,18 @@
 <%= @website.content %>
 </div>
 <button class="btn btn-success pull-right" id="execute">Read!</button>
+
+<div class="notification"></div>
+
+    <script>
+
+    var pusher = new Pusher('3494f9e018b67bf6a8fd');
+
+    var notificationsChannel = pusher.subscribe('notifications');
+
+    notificationsChannel.bind('new_notification', function(notification){
+        var message = notification.message;
+        $('div.notification').text(message);
+    });
+
+    </script>

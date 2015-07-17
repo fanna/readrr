@@ -40,8 +40,9 @@ $(document).ready(function() {
 		var arrayLength = res.length;
 		for (var i = 0; i < arrayLength; i++) {
     		var myFinalString = res[i];
-    		console.log(myFinalString);
+    		//console.log(myFinalString);
     		$.post("http://localhost:4567/", { myFinalString: myFinalString });
+
 
 		}
 	});
