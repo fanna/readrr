@@ -1,6 +1,7 @@
 class WebsitesController < ApplicationController
 	  require 'open-uri'
 	  require 'nokogiri'
+    require 'net/http'
 
   def new
   	@website = Website.new
@@ -29,6 +30,7 @@ class WebsitesController < ApplicationController
     array = @final_content.split(" ")
 
     @website.content = array
+
 
   	if @website.save
   		redirect_to new_website_path

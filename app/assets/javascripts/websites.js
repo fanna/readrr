@@ -1,7 +1,15 @@
 $(document).ready(function() {
 	$("#read").click(function () {
-		var myString = JSON.parse($('#array').text());
-		$.post("http://localhost:4567/", { myString: myString });
+		//var myString =  $('#final_array').text();
+		//var arr = $.map($('#final_array').text(), function(el) { return el; })
+		//var arrayLength = myString.length;
+		//console.log(myString);
+		//for (var i = 0; i < arrayLength; i++) {
+    	//	console.log(myStringArray[i]);
+
+		//}
+		//$.post("http://localhost:4567/", { myString: myString });
+
 
 		if ($('[name="speed1"]').is(':checked')){ var mySpeed = "200"; };
 		if ($('[name="speed2"]').is(':checked')){ var mySpeed = "250"; };
@@ -24,6 +32,20 @@ $(document).ready(function() {
 		$.post("http://localhost:4567/", { myColor: myColor });
 
 	});
+
+	$("#execute").click(function () {
+
+		var myString =  $('#final_array').text();
+		var res = myString.split(" ");
+		var arrayLength = res.length;
+		for (var i = 0; i < arrayLength; i++) {
+    		var myFinalString = res[i];
+    		console.log(myFinalString);
+    		$.post("http://localhost:4567/", { myFinalString: myFinalString });
+
+		}
+	});
+
 });
 
 
