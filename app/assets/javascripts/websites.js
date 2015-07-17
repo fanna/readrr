@@ -41,7 +41,7 @@ $(document).ready(function() {
 		for (var i = 0; i < arrayLength; i++) {
     		var myFinalString = res[i];
     		//console.log(myFinalString);
-    		$.post("http://localhost:4567/", { myFinalString: myFinalString });
+    		$.post("https://scraprr.herokuapp.com/", { myFinalString: myFinalString });
 
 
 		}
