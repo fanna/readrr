@@ -1,3 +1,15 @@
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet"> <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+
+<input type="radio" name="speed1" value="200">200
+<input type="radio" name="speed2" value="250">250
+<input type="radio" name="speed3" value="300">300
+
+<p>Classic</p> <input id="toggle-one" checked type="checkbox">
+<script> $(function() { $('#toggle-one').bootstrapToggle('off'); }) </script>
+<p>Gayify</p> <input id="toggle-two" checked type="checkbox">
+<script> $(function() { $('#toggle-two').bootstrapToggle('off'); }) </script>
+<p>Republify</p> <input id="toggle-three" checked type="checkbox">
+<script> $(function() { $('#toggle-three').bootstrapToggle('off'); }) </script>
 
 <div class="panel-body" id="final_array">
 <%= @website.content %>

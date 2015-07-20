@@ -1,6 +1,18 @@
 
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet"> <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+<ul class="nav navbar-nav navbar-right">
+<% if user_signed_in? %>
+<li><%= link_to "Logout", destroy_user_session_path, method: :delete  , class: 'btn btn-danger btn-xs'%></li>
+<% else %>
+<li><%= link_to "Register", new_user_registration_path %></li>
+<li><%= link_to "Login", new_user_session_path %></li>
+<% end %>
+
+</ul>
+
 <h1>Read sites:</h1>
-<div class="container">
+<div class="site_list">
 <% @websites.each do |website| %>
 <h5><%= link_to website.url, website_path(website.id) %></h5>
 <% end %>

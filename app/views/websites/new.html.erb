@@ -9,35 +9,24 @@
 <li><%= link_to "Login", new_user_session_path %></li>
 <% end %>
 
-</ul>
-<input type="radio" name="speed1" value="200">200
-<input type="radio" name="speed2" value="250">250
-<input type="radio" name="speed3" value="300">300
 
-	<%= form_for @website do |f| -%>
-		<%= f.text_field :url , class: 'form-control', id: 'search' %>
-		<%= f.submit "Read!", class: 'btn btn-danger btn-md', id:'read' %>
-	<% end -%>
+    <%= form_for @website do |f| -%>
+        <%= f.text_field :url , class: 'form-control', id: 'search' %>
+        <%= f.submit "Read!", class: 'btn btn-danger btn-md', id:'read' %>
+    <% end -%>
 
-<p>Classic</p> <input id="toggle-one" checked type="checkbox"> 
-	<script> $(function() { $('#toggle-one').bootstrapToggle('off'); }) </script>
-<p>Gayify</p> <input id="toggle-two" checked type="checkbox"> 
-	<script> $(function() { $('#toggle-two').bootstrapToggle('off'); }) </script>
-<p>Republify</p> <input id="toggle-three" checked type="checkbox"> 
-	<script> $(function() { $('#toggle-three').bootstrapToggle('off'); }) </script>
+    <h1 id="info"><%=link_to "Site list", websites_path %></h1><br />
+    <div class="urls" id="urls">
+    <% if !@websites.blank? %>
+        <% for item in @websites %>
+        <%= item.url %><br />
+        <% end %>
 
-	<h1 id="info"><%=link_to "Read sites", websites_path %></h1><br />
-	<div class="urls" id="urls">
-	<% if !@websites.blank? %>
-		<% for item in @websites %>
-		<%= item.url %><br />
-		<% end %>
-
-	<% else %>
-	</div>
+    <% else %>
+    </div>
 
 
-	<% end %>
-	
+    <% end %>
+    
 
-	
+    
