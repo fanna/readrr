@@ -5,7 +5,7 @@ class WebsitesController < ApplicationController
 
   def new
   	@website = Website.new
-  	
+
   end
 
   def create
@@ -25,7 +25,7 @@ class WebsitesController < ApplicationController
     end
 
     @final_content = @h1_title + @paragraph
-    
+
     array = Array.new
     array = @final_content.split(" ")
 
@@ -35,8 +35,8 @@ class WebsitesController < ApplicationController
   	if @website.save
   		redirect_to new_website_path
   	end
-  end 
-    
+  end
+
     def show
       @website = Website.find(params[:id])
       @array = @website.content
@@ -47,7 +47,7 @@ class WebsitesController < ApplicationController
       @websites = Website.all
     end
 
-  
+
 
   def website_params
     params.require(:website).permit(:url)
