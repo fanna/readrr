@@ -9,7 +9,7 @@ $(document).ready(function() {
 	    console.log(myFinalString);
 	    $.post("http://localhost:4567/", { myFinalString: myFinalString });
 
-	    if ($('[name="speed1"]').is(':checked')){ var mySpeed = "200"; };
+	    /*if ($('[name="speed1"]').is(':checked')){ var mySpeed = "200"; };
 	    if ($('[name="speed2"]').is(':checked')){ var mySpeed = "250"; };
 	    if ($('[name="speed3"]').is(':checked')){ var mySpeed = "300"; };
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	    };
 
 	    $.post("http://localhost:4567/", { myColor: myColor });
-	
+	*/
 
 	}
     });

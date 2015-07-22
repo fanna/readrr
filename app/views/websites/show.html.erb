@@ -16,7 +16,7 @@
 </div>
 <button class="btn btn-success pull-right" id="execute">Read!</button>
 
-<div class="notification"></div>
+<h2 class="notification"></h2>
 
     <script>
 
@@ -26,7 +26,7 @@
 
     notificationsChannel.bind('new_notification', function(notification){
         var message = notification.message;
-        $('div.notification').text(message);
+        $('h2.notification').text(message);
     });
 
     </script>
