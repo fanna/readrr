@@ -2,6 +2,7 @@ class WebsitesController < ApplicationController
 	  require 'open-uri'
 	  require 'nokogiri'
     require 'net/http'
+    require_relative "lib/scrap_logic.rb"
 
   def new
   	@website = Website.new
@@ -9,28 +10,12 @@ class WebsitesController < ApplicationController
   end
 
   def create
-  	@website = Website.new(website_params)
 
-    @h1_title = ""
-    @paragraph = ""
-    @final_content = " "
-
+    @website = Website.new(website_params)
     url = params[:website][:url]
 
-    data = Nokogiri::HTML(open(url))
-    contents = data.css("html")
-    contents.each do |content|
-      @h1_title = content.css("h1").text.strip
-      @paragraph = content.css("p").text.strip
-    end
-
-    @final_content = @h1_title + @paragraph
-
-    array = Array.new
-    array = @final_content.split(" ")
-
+    array = scrap_it(url)
     @website.content = array
-
 
   	if @website.save
   		redirect_to new_website_path
