@@ -11,6 +11,8 @@ class WebsitesController < ApplicationController
 
   	if @website.save
   		redirect_to new_website_path
+    else
+      render :action => 'index'
   	end
   end
 
