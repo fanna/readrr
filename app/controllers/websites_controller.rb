@@ -9,17 +9,15 @@ class WebsitesController < ApplicationController
 
     @website.content = ContentExtractor.new(@website.url).extract
 
-  	if @website.save
-  		redirect_to new_website_path
+    if @website.save
+      redirect_to new_website_path
     else
       render :action => 'index'
-  	end
+    end
   end
 
   def show
     @website = Website.find(params[:id])
-    @array = @website.content
-
   end
 
   def index
